@@ -3,7 +3,19 @@
 {
 	"name": "Alpine",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:alpine-3.18"
+	"image": "mcr.microsoft.com/devcontainers/base:alpine-3.18",
+
+	// Environment variables to set in the container
+	"containerEnv": {
+		"ALPINE_VERSION": "${localEnv:ALPINE_VERSION}",
+		"TIMEZONE": "${localEnv:TIMEZONE}",
+		"LANG": "${localEnv:LANG}",
+		"EDITOR": "${localEnv:EDITOR}",
+		"SHELL": "${localEnv:SHELL}",
+		"NODE_ENV": "${localEnv:NODE_ENV}",
+		"DEBUG": "${localEnv:DEBUG}",
+		"LOG_LEVEL": "${localEnv:LOG_LEVEL}"
+	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -20,3 +32,4 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
+
