@@ -1,0 +1,4 @@
+# Environment variables
+# Ignore local environment configuration but keep example file tracked
+.env
+
